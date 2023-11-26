@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 import CryptoJS from "crypto-js";
 import SeoStatus from "../../ProjectStatus/SeoStatus";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import axios from "axios";
-import DetailsContext from "../../../Context/CreateContext";
+
 
 export default function ProSEOSearchView() {
   const [error, setError] = useState("");
@@ -22,7 +22,7 @@ export default function ProSEOSearchView() {
     const fetchFilteredData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/filter/seo/search`,
+          `${process.env.REACT_APP_PROXY_URL}/filter/seo/search`,
           { params: formData }
         );
 

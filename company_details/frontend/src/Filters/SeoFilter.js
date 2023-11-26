@@ -1,6 +1,5 @@
 import { useState } from "react";
 import FilterForm from "./FilterForm";
-import axios from "axios";
 
 export default function SeoFilter({searchGet,comesFrom}) {
   // const history = useHistory();
@@ -15,7 +14,7 @@ export default function SeoFilter({searchGet,comesFrom}) {
     ProjectTitle: "",
     Name: ""
   });
-// const [result,setResult] = useState([])
+
   const inputs = [
       {
         type: "date",

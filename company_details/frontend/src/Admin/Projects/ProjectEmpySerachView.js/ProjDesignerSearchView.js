@@ -19,7 +19,7 @@ export default function ProjDesignerSearchView() {
     const fetchFilteredData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/filter/designer/search`,
+          `${process.env.REACT_APP_PROXY_URL}/filter/designer/search`,
           { params: formData }
         );
 

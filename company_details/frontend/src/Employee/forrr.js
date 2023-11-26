@@ -113,7 +113,7 @@ if(designation === 'SEO'){
   try {
     // Send POST request to the server
     const response = await axios.post(
-      "http://localhost:8080/employee/project/submit",
+      `${process.env.REACT_APP_PROXY_URL}/employee/project/submit`,
       formData
     );
     console.log("Projects successfully added:", response.data);
@@ -127,7 +127,7 @@ if(designation === 'DESIGNER'){
   try {
     // Send POST request to the server
     const response = await axios.post(
-      "http://localhost:8080/employee/project/submit",
+      `${process.env.REACT_APP_PROXY_URL}/employee/project/submit`,
       formData
     );
     console.log("Projects successfully added:", response.data);

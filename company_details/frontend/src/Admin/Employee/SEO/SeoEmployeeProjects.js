@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import DetailsContext from "../../../Context/CreateContext";
 import axios from "axios";
 import "../../../Styles/ProjectStatus.css";
-import Filters from "../ReUseFunc.js/Filters";
-import { json, useNavigate } from "react-router-dom";
+
+import {  useNavigate } from "react-router-dom";
 import CryptoJS from "crypto-js";
 import SeoStatus from "../../ProjectStatus/SeoStatus";
 import SeoFilter from "../../../Filters/SeoFilter";
@@ -16,7 +16,7 @@ export default function SeoEmployeeProject() {
   useEffect(() => {
     // const projectName= localStorage.getItem('ProjectName')
     axios
-      .get(`http://localhost:8080/employee/proj/status/${projectEmplyId}`)
+      .get(`${process.env.REACT_APP_PROXY_URL}/employee/proj/status/${projectEmplyId}`)
       .then((res) => {
         // console.log(res.data.data, "emply res");
         setData(res.data.data);

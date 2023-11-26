@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import DetailsContext from "../../../Context/CreateContext";
+import React, {  useEffect, useState } from "react";
+
 import axios from "axios";
 import "../../../Styles/ProjectStatus.css";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import WriterStatus from "../../ProjectStatus/WriterStatus";
 import WriterFilter from "../../../Filters/WriterFilter";
 
 export default function WriterProjectStatus() {
-  const { setProjectStatusData } = useContext(DetailsContext);
+ 
   const [data, setData] = useState([]);
 
   const projectEmplyId = localStorage.getItem("projEmId");
@@ -16,7 +16,7 @@ export default function WriterProjectStatus() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8080/employee/writer/proj/status/${projectEmplyId}`
+        `${process.env.REACT_APP_PROXY_URL}/employee/writer/proj/status/${projectEmplyId}`
       )
       .then((res) => {
         // console.log(res, "emply res");

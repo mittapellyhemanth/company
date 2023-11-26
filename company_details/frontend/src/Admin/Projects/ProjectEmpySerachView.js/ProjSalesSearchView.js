@@ -22,7 +22,7 @@ export default function ProjSalesSearchView() {
     const fetchFilteredData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/filter/sales/search`,
+          `${process.env.REACT_APP_PROXY_URL}/filter/sales/search`,
           { params: formData }
         );
 

@@ -20,7 +20,7 @@ export default function SeoStatus({ data,comesFrom }) {
   const handleClick = async (_id) => {
     
     await axios
-      .get(`http://localhost:8080/admin/seoProject/One/View/${_id}`)
+      .get(`${process.env.REACT_APP_PROXY_URL}/admin/seoProject/One/View/${_id}`)
       .then((res) => {
         const result = res.data.data;
         const encryptSeo = CryptoJS.AES.encrypt(

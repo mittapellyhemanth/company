@@ -10,16 +10,16 @@ export default function ViewLeaves({ data }) {
   const statusUpdate = async (_id, emplyId, status) => {
     let URL = ``;
     if (emplyId === "SE") {
-      URL = `http://localhost:8080/leave/seo/status/${_id}`;
+      URL = `${process.env.REACT_APP_PROXY_URL}/leave/seo/status/${_id}`;
     }
     if (emplyId === "DE") {
-      URL = `http://localhost:8080/leave/designer/status/${_id}`;
+      URL = `${process.env.REACT_APP_PROXY_URL}/leave/designer/status/${_id}`;
     }
     if (emplyId === "SA") {
-      URL = `http://localhost:8080/leave/sales/status/${_id}`;
+      URL = `${process.env.REACT_APP_PROXY_URL}/leave/sales/status/${_id}`;
     }
     if (emplyId === "WR") {
-      URL = `http://localhost:8080/leave/writer/status/${_id}`;
+      URL = `${process.env.REACT_APP_PROXY_URL}/leave/writer/status/${_id}`;
     }
 
     const send = await axios.put(URL, { Status: status });

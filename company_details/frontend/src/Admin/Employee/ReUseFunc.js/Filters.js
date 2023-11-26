@@ -10,7 +10,7 @@ const Filters = () => {
     try {
       await axios
         .get(
-          `http://localhost:8080/admin/search/date?fromDate=${fromDate}&toDate=${toDate}`
+          `${process.env.REACT_APP_PROXY_URL}/admin/search/date?fromDate=${fromDate}&toDate=${toDate}`
         )
         .then((result) => {
           if (result.status === 200) {

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import DetailsContext from "../Context/CreateContext";
-import Button from "react-bootstrap/Button";
+
 
 import "./AppLeave.css";
 
@@ -45,7 +45,7 @@ export default function Application() {
       required: true,
     }
   );
-  const navigate = useNavigate();
+
 
   const [formData, setFormData] = useState({});
 
@@ -77,20 +77,20 @@ export default function Application() {
 
     try {
       if(type === 'SEO'){
-        const URL =`http://localhost:8080/leave/seo/${emplyId}/${Name}`
+        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/seo/${emplyId}/${Name}`
         PostData(URL,formData)
       }
       if(type === 'SALES'){
-        const URL =`http://localhost:8080/leave/sales/${emplyId}/${Name}`
+        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/sales/${emplyId}/${Name}`
         PostData(URL,formData)
       }
       if(type === 'DESIGNER'){
-        const URL =`http://localhost:8080/leave/designer/${emplyId}/${Name}`
+        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/designer/${emplyId}/${Name}`
         PostData(URL,formData)
       
       }
       if(type === 'WRITER'){
-        const URL =`http://localhost:8080/leave/writer/${emplyId}/${Name}`
+        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/writer/${emplyId}/${Name}`
         PostData(URL,formData)
       
       }

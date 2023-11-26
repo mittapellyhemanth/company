@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import WriterStatus from "../../ProjectStatus/WriterStatus";
 import CryptoJS from "crypto-js";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import axios from "axios";
 
 export default function ProjWriterSearchView() {
@@ -20,7 +20,7 @@ export default function ProjWriterSearchView() {
     const fetchFilteredData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/filter/writer/search`,
+          `${process.env.REACT_APP_PROXY_URL}/filter/writer/search`,
           { params: formData }
         );
 

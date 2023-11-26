@@ -40,19 +40,19 @@ const getDetails = async(url,token)=>{
       Authorization: key
     };
     if(type === 'SEO'){
-      getDetails(`http://localhost:8080/admin/getOneSeo/${id}`,{headers})
+      getDetails(`${process.env.REACT_APP_PROXY_URL}/admin/getOneSeo/${id}`,{headers})
     
     }
     if(type === 'WRITER'){
-      getDetails(`http://localhost:8080/admin/getOneWriter/${id}`,{headers})
+      getDetails(`${process.env.REACT_APP_PROXY_URL}/admin/getOneWriter/${id}`,{headers})
     
     }
     if(type === 'DESIGNER'){
-      getDetails(`http://localhost:8080/admin/getOneDesigner/${id}`,{headers})
+      getDetails(`${process.env.REACT_APP_PROXY_URL}/admin/getOneDesigner/${id}`,{headers})
     
     }
     if(type === 'SALES'){
-      getDetails(`http://localhost:8080/admin/getOneSales/${id}`,{headers})
+      getDetails(`${process.env.REACT_APP_PROXY_URL}/admin/getOneSales/${id}`,{headers})
     
     }
   },[setOneData]);

@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import DetailsContext from "../../../Context/CreateContext";
+
 import CryptoJS from "crypto-js";
 import SalesStatus from "../../ProjectStatus/SalesStatus";
 import SalesFilter from "../../../Filters/SalesFilter";
@@ -25,7 +25,7 @@ export default function ProjectSalesStatus() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8080/admin/SalesOneProject/${projectEmplyId}/${projectName}`
+        `${process.env.REACT_APP_PROXY_URL}/admin/SalesOneProject/${projectEmplyId}/${projectName}`
       )
       .then((res) => {
       

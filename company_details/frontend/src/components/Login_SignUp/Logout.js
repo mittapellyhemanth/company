@@ -63,9 +63,9 @@ const Logout = async () => {
       TotalWorkTime: totalWork,
     };
 
-    const DeleteBreakTime = `http://localhost:8080/employee/previousbreakTime/taken/${employID}/${date}`;
+    const DeleteBreakTime = `${process.env.REACT_APP_PROXY_URL}/employee/previousbreakTime/taken/${employID}/${date}`;
     await axios.delete(DeleteBreakTime);
-    await axios.post(`http://localhost:8080/admin/trackAttendance/${employID}`, data);
+    await axios.post(`${process.env.REACT_APP_PROXY_URL}/admin/trackAttendance/${employID}`, data);
 
     localStorage.clear(); // Clear local storage
 

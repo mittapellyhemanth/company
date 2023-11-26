@@ -24,7 +24,7 @@ export default function DesignerStatus({ data, comesFrom }) {
 
   const handleClick = async (_id) => {
     await axios
-      .get(`http://localhost:8080/designer/proj/view/${_id}`)
+      .get(`${process.env.REACT_APP_PROXY_URL}/designer/proj/view/${_id}`)
       .then((res) => {
         const result = res.data.data;
         const encryptSeo = CryptoJS.AES.encrypt(
@@ -54,7 +54,7 @@ export default function DesignerStatus({ data, comesFrom }) {
 
   const Delete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/designer/delete/one/${id}`);
+      await axios.delete(`${process.env.REACT_APP_PROXY_URL}/designer/delete/one/${id}`);
       setSucessfully("Deleted Successfully");
       await window.location.reload();
     } catch (error) {
@@ -64,7 +64,7 @@ export default function DesignerStatus({ data, comesFrom }) {
 
   const Download = async (filename) => {
     try {
-      const response = await axios.get(`http://localhost:8080/designer/images/${filename}`, {
+      const response = await axios.get(`${process.env.REACT_APP_PROXY_URL}/designer/images/${filename}`, {
         responseType: 'blob',
       });
 
@@ -107,7 +107,7 @@ export default function DesignerStatus({ data, comesFrom }) {
                       <Card.Img
                         variant="top"
                         className="img-size"
-                        src={`http://localhost:8080/designer/images/${img.PostImage}`}
+                        src={`${process.env.REACT_APP_PROXY_URL}/designer/images/${img.PostImage}`}
                         alt="user-img"
                       />
                       <Card.Body>

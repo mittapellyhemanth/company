@@ -21,7 +21,7 @@ export default function ProjectSeoStatus(){
  useEffect(()=>{
 
    axios
-   .get(`http://localhost:8080/admin/SeoOneProject/${projectEmplyId}/${projectName}`)
+   .get(`${process.env.REACT_APP_PROXY_URL}/admin/SeoOneProject/${projectEmplyId}/${projectName}`)
    .then((res) => {
 
      setProjectData(res.data.data)

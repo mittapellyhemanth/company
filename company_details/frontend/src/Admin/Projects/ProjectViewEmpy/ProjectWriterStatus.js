@@ -19,7 +19,7 @@ export default function ProjectWriterStatus(){
  useEffect(()=>{
 
    axios
-   .get(`http://localhost:8080/admin/WriterOneProject/${projectEmplyId}/${projectName}`)
+   .get(`${process.env.REACT_APP_PROXY_URL}/admin/WriterOneProject/${projectEmplyId}/${projectName}`)
    .then((res) => {
      
      setProjectData(res.data.data)

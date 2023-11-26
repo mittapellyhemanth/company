@@ -21,7 +21,7 @@ export default function Admins() {
     const superAdminId = localStorage.getItem("unique_id");
     console.log(superAdminId, "super");
     axios
-      .get(`http://localhost:8080/superAdmin/admins/${superAdminId}`, {
+      .get(`${process.env.REACT_APP_PROXY_URL}/superAdmin/admins/${superAdminId}`, {
         headers,
       })
       .then((res) => {

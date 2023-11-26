@@ -3,7 +3,7 @@ import "./Break.css";
 import axios from "axios";
 
 export default function BreakTime() {
-  const [BreakData, setBreakData] = useState({});
+  
   const [breakStart, setBreakStart] = useState(() => {
     // Retrieve break start time from localStorage, if available
     return parseInt(localStorage.getItem("breakStart")) || null;
@@ -35,7 +35,7 @@ export default function BreakTime() {
   //handleBreakStart
   const handleBreakStart = async () => {
     setBreakStart(Date.now() - elapsedTime);
-    const URL = `http://localhost:8080/employee/previousbreakTime/${employID}/${date}`; //get
+    const URL = `${process.env.REACT_APP_PROXY_URL}/employee/previousbreakTime/${employID}/${date}`; //get
     await axios.get(URL).then((res) => {
       // console.log(res.data);
       setPrevBreak(res.data);
@@ -61,7 +61,7 @@ export default function BreakTime() {
   const handleBreakEnd = async () => {
     setTimerRunning(false);
 
-    const URL = `http://localhost:8080/employee/breakTime/${employID}`; //post
+    const URL = `${process.env.REACT_APP_PROXY_URL}/employee/breakTime/${employID}`; //post
     function timeToSeconds(time) {
       const [hours, minutes] = time.split(":").map(Number);
       return hours * 3600 + minutes * 60;
@@ -109,7 +109,7 @@ export default function BreakTime() {
 
       console.log("Total Time Worked:", totalBreak);
 
-      const prevDeleteURL = `http://localhost:8080/employee/previousbreakTime/taken/${employID}/${date}`; // delete
+      const prevDeleteURL = `${process.env.REACT_APP_PROXY_URL}/employee/previousbreakTime/taken/${employID}/${date}`; // delete
       await axios.delete(prevDeleteURL);
       const data = {
         Date: date,

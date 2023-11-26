@@ -9,7 +9,7 @@ export default function WriterLeaveTracker() {
     const fetchData = async () => {
       try {
         const result = await axios.get(
-          "http://localhost:8080/leave/writer/getleaves"
+          `${process.env.REACT_APP_PROXY_URL}/leave/writer/getleaves`
         );
         setData(result.data.data);
         // console.log(result.data.data);

@@ -74,7 +74,7 @@ export default function SalesProjectSubmit() {
   const projectName = localStorage.getItem("ProjectName");
   const Name = localStorage.getItem("userName");
   const client = localStorage.getItem('Client')
-  const URL = `http://localhost:8080/employee/sales/project/submit/${employID}/${projectName}/${Name}/${client}`;
+  const URL = `${process.env.REACT_APP_PROXY_URL}/employee/sales/project/submit/${employID}/${projectName}/${Name}/${client}`;
 
   const onSubmit = async (formData, url, TIMETAKEN) => {
     console.log(formData, url);

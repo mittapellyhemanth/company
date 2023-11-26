@@ -9,7 +9,7 @@ export default function SeoLeaveTracker() {
     const fetchData = async () => {
       try {
         const result = await axios.get(
-          "http://localhost:8080/leave/seo/getleaves"
+          `${process.env.REACT_APP_PROXY_URL}/leave/seo/getleaves`
         );
         setData(result.data.data);
         // console.log(result.data.data);

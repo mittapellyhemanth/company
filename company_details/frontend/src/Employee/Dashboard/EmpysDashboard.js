@@ -1,7 +1,6 @@
 import React from "react";
 
-import { BsPersonFillAdd } from "react-icons/bs";
-import { MdAdminPanelSettings } from "react-icons/md";
+
 
 import "../../Styles/SuperHome.css";
 
@@ -16,10 +15,10 @@ export default function EmpysDashboard() {
   UserName();
 
 const sidebarData = [
-  {label:'PROJECTS', to:'project',icon:<MdAdminPanelSettings/>},
-  {label:'APPLICATION FOR LEAVE', to:'leave',icon:<BsPersonFillAdd/>},
-  {label:'YOUR DETAILS', to:'details',icon:<MdAdminPanelSettings/>},
-  {label:'BREAK TIME', to:'break',icon:<BsPersonFillAdd/>}
+  {label:'PROJECTS', to:'project'},
+  {label:'APPLICATION FOR LEAVE', to:'leave'},
+  {label:'YOUR DETAILS', to:'details'},
+  {label:'BREAK TIME', to:'break'}
 ];
 
   return (

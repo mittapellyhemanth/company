@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import DetailsContext from "../../../Context/CreateContext";
+import React, {  useEffect, useState } from "react";
+
 import axios from "axios";
 import "../../../Styles/ProjectStatus.css";
 import Attendance from "../Attendance";
@@ -10,7 +10,7 @@ export default function WriterAttendStatus() {
   const EmplyId = localStorage.getItem("projEmId");
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/admin/employe/Attendance/${EmplyId}`)
+      .get(`${process.env.REACT_APP_PROXY_URL}/admin/employe/Attendance/${EmplyId}`)
       .then((res) => {
         // console.log(res.data.data, "emply res");
         setData(res.data.data);

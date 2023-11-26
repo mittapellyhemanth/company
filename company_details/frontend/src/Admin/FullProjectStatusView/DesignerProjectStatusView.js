@@ -3,7 +3,7 @@ import CryptoJS from "crypto-js";
 import Card from "react-bootstrap/Card";
 
 import Row from "react-bootstrap/Row";
-import axios from "axios";
+
 
 import { useNavigate } from "react-router-dom";
 
@@ -28,7 +28,7 @@ export default function DesignerProjectStatusView() {
               <Card.Img
                 variant="top"
                 className="one-img-size"
-                src={`http://localhost:8080/designer/images/${projectStatusData.PostImage}`}
+                src={`${process.env.REACT_APP_PROXY_URL}/designer/images/${projectStatusData.PostImage}`}
                 alt="user-img"
               />
               <Card.Body>

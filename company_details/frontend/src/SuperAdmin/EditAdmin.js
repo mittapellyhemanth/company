@@ -71,7 +71,7 @@ export default function EditAdmin() {
     };
     try {
       await axios
-        .put(`http://localhost:8080/superAdmin/admin/update/${id}`, formData,{headers})
+        .put(`${process.env.REACT_APP_PROXY_URL}/superAdmin/admin/update/${id}`, formData,{headers})
         .then((res) => {
           console.log(res, "ress");
           if (res.data.error) {

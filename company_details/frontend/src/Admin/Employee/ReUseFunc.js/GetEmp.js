@@ -1,10 +1,10 @@
 import axios from "axios";
-import React, { useState, useEffect, useContext } from "react";
-import Button from "react-bootstrap/Button";
+import React, { useState, useEffect } from "react";
+
 import Card from "react-bootstrap/Card";
 import "../../../Styles/EmpyCards.css";
 import "../../../Styles/OneView.css";
-import DetailsContext from "../../../Context/CreateContext";
+
 import { useNavigate } from "react-router-dom";
 
 export default function GetEmply({ url, NavigateUrl, type }) {
@@ -71,19 +71,19 @@ export default function GetEmply({ url, NavigateUrl, type }) {
       return setError("Enter Name");
     }
     if (type === "SEO") {
-      const URL = `http://localhost:8080/admin/oneEmpy/getSeo/${name}`;
+      const URL = `${process.env.REACT_APP_PROXY_URL}/admin/oneEmpy/getSeo/${name}`;
       SEARCH(URL);
     }
     if (type === "WRITER") {
-      const URL = `http://localhost:8080/admin/oneEmpy/getWriter/${name}`;
+      const URL = `${process.env.REACT_APP_PROXY_URL}/admin/oneEmpy/getWriter/${name}`;
       return  SEARCH(URL);
     }
     if (type === "DESIGNER") {
-      const URL = `http://localhost:8080/admin/oneEmpy/getDesigner/${name}`;
+      const URL = `${process.env.REACT_APP_PROXY_URL}/admin/oneEmpy/getDesigner/${name}`;
       return SEARCH(URL);
     }
     if (type === "SALES") {
-      const URL = `http://localhost:8080/admin/sales/oneEmpy/getSales/${name}`;
+      const URL = `${process.env.REACT_APP_PROXY_URL}/admin/sales/oneEmpy/getSales/${name}`;
       return SEARCH(URL);
     }
   };

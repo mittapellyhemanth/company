@@ -22,7 +22,7 @@ export default function AdminView(){
     const headers = {
       Authorization: key
     };
-    axios.get(`http://localhost:8080/superAdmin/admin/view/${empyId}`,{headers})
+    axios.get(`${process.env.REACT_APP_PROXY_URL}/superAdmin/admin/view/${empyId}`,{headers})
     .then((res) => {
       
       if (res.status === 200) {
@@ -60,7 +60,7 @@ const handleDelete =()=>{
   //   Authorization: key
   // };
   const empyId = localStorage.getItem('empyId')
-  axios.delete(`http://localhost:8080/superAdmin/admin/delete/${empyId}`)
+  axios.delete(`${process.env.REACT_APP_PROXY_URL}/superAdmin/admin/delete/${empyId}`)
   .then((res) => {
     
     if (res.status === 200) {

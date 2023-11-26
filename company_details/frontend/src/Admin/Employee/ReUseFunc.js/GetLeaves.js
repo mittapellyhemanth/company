@@ -20,19 +20,19 @@ export default function GetLeaves({ data, comesFrom }) {
       let url = ``;
      let navigateUrl = ''
       if (firstTwoLetters === "SE") {
-         url = `http://localhost:8080/leave/seo/getOneleave/${_id}`;
+         url = `${process.env.REACT_APP_PROXY_URL}/leave/seo/getOneleave/${_id}`;
          navigateUrl = "/v2/em/view/leave"
       }
       if (firstTwoLetters === "DE") {
-         url = `http://localhost:8080/leave/designer/getOneleave/${_id}`;
+         url = `${process.env.REACT_APP_PROXY_URL}/leave/designer/getOneleave/${_id}`;
          navigateUrl = "/v2/design/view/leave"
       }
       if (firstTwoLetters === "SA") {
-         url = `http://localhost:8080/leave/sales/getOneleave/${_id}`;
+         url = `${process.env.REACT_APP_PROXY_URL}/leave/sales/getOneleave/${_id}`;
          navigateUrl = "/v2/sales/view/leave"
       }
       if (firstTwoLetters === "WR") {
-         url = `http://localhost:8080/leave/writer/getOneleave/${_id}`;
+         url = `${process.env.REACT_APP_PROXY_URL}/leave/writer/getOneleave/${_id}`;
          navigateUrl = "/v2/writer/view/leave"
       }
       const res = await axios.get(url);

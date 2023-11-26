@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-import { BsPersonFillAdd } from "react-icons/bs";
-import { MdAdminPanelSettings } from "react-icons/md";
+
 import "../Styles/SuperHome.css";
 // import DetailsContext from "../Context/CreateContext";
 import NavbarScroll from "../components/Navbar/NavbarScroll";
 import Sidebar from "../components/Sidebar/Sidebar";
 import UserName from "../Functions/UserName";
 
-import { MdOutlineAdminPanelSettings } from "react-icons/md";
+
 import axios from 'axios'
 
 export default function SuperAdminHome() {

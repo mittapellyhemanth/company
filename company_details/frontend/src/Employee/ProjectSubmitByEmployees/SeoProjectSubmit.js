@@ -92,7 +92,7 @@ export default function SeoProjectSubmit() {
   const projectName = localStorage.getItem("ProjectName");
   const Name = localStorage.getItem("userName");
   const client = localStorage.getItem('Client')
-  const URL = `http://localhost:8080/employee/project/submit/${employID}/${projectName}/${Name}/${client}`;
+  const URL = `${process.env.REACT_APP_PROXY_URL}/employee/project/submit/${employID}/${projectName}/${Name}/${client}`;
 
   const onSubmit = async (formData, url, TIMETAKEN) => {
     console.log(formData, url);

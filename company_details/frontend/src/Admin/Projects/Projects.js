@@ -20,7 +20,7 @@ export default function Projects(click) {
     };
     const AdminId = localStorage.getItem("unique_id");
     axios
-      .get(`http://localhost:8080/admin/getProject/${AdminId}`, { headers })
+      .get(`${process.env.REACT_APP_PROXY_URL}/admin/getProject/${AdminId}`, { headers })
       .then((res) => {
         // console.log(res)
         if (res.status === 200) {
@@ -69,7 +69,7 @@ export default function Projects(click) {
   // console.log(name);
   const handleSearch = async () => {
     await axios
-      .get(`http://localhost:8080/admin/oneProject/${name}`)
+      .get(`${process.env.REACT_APP_PROXY_URL}/admin/oneProject/${name}`)
       .then((result) => {
         // console.log(result);
         setData(result.data.data);

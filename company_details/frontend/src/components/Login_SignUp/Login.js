@@ -85,19 +85,19 @@ let LoginTime = hours + ":" + minutes + ":" + seconds + " " + ampm
     
       
       let url = "/v1"
-      let serverURL = "http://localhost:8080/superAdmin/login"
+      let serverURL = `${process.env.REACT_APP_PROXY_URL}/superAdmin/login`
       return await navigation(formData , url, serverURL)
     };
     if (personLogin === "Admin") {
       let url = "/ad/dashboard"
-      let serverURL = "http://localhost:8080/admin/login"
+      let serverURL = `${process.env.REACT_APP_PROXY_URL}/admin/login`
       return await navigation(formData , url, serverURL)
     };
     if (personLogin === "Employee") {
       localStorage.setItem("date",date)
       localStorage.setItem("LogTime",LoginTime)
       let url = "/v3/empy/"
-      let serverURL = "http://localhost:8080/employee/login"
+      let serverURL = `${process.env.REACT_APP_PROXY_URL}/employee/login`
       return await navigation(formData , url, serverURL)
     };
 

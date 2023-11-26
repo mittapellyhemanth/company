@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FilterForm from "./FilterForm";
-import axios from "axios";
+
 
 export default function WriterFilter({searchGet,comesFrom}) {
   // const history = useHistory();
@@ -84,22 +84,12 @@ const onSubmit = async(formData)=>{
     setError("At least one parameter is required for search");
     return;
   }
-  // try {
-  //   const response = await axios.get(`http://localhost:8080/filter/writer/search`, { params: formData });
-
-  //   if (response.status === 200) {
-  //     if(response.data.error){
-        
-  //         setError(response.data.error)
+  
           setFormData('')
-  //       }else{
+  
           searchGet(formData)
           
-  //         console.log(response.data.data);
-  //         setFormData('')
-  //         setError('')
-       
-  //       }
+  
       
       const queryParams = new URLSearchParams(formData).toString();
       console.log(queryParams,"eee");
@@ -113,11 +103,7 @@ const onSubmit = async(formData)=>{
       }
       window.history.pushState({ path: newUrl }, '', newUrl);
     }
-//   } catch (error) {
-//     setError('Error fetching data');
-//     setSearchResult([]);
-//   }
-// }
+
 
 return (
     <div>

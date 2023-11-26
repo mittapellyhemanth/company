@@ -4,7 +4,7 @@ export default function AddSales() {
   //send url,naviga,seo
   const AdminId = localStorage.getItem("unique_id");
   const data = {
-    Url: `http://localhost:8080/admin/addSales/${AdminId}`,
+    Url: `${process.env.REACT_APP_PROXY_URL}/admin/addSales/${AdminId}`,
     Navlink: "/v2/sales/sa/addempy",
   };
 

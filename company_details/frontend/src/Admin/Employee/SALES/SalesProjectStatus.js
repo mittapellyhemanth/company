@@ -8,8 +8,7 @@ import CryptoJS from "crypto-js";
 export default function SalesProjectStatus() {
   const [data, setData] = useState([]);
 
-  const [fromDate, setFromDate] = useState("");
-  const [toDate, setToDate] = useState("");
+
   const { setProjectStatusData } = useContext(DetailsContext);
   setProjectStatusData("");
 
@@ -23,7 +22,7 @@ export default function SalesProjectStatus() {
   const fetchData = async (employeeId) => {
     try {
       const res = await axios.get(
-        `http://localhost:8080/employee/sales/proj/status/${employeeId}`
+        `${process.env.REACT_APP_PROXY_URL}/employee/sales/proj/status/${employeeId}`
       );
       setData(res.data.data);
     } catch (error) {

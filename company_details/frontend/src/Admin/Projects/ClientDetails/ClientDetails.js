@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import CryptoJS from "crypto-js";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,7 @@ export default function ClientDetails() {
     };
     const AdminId = localStorage.getItem("unique_id");
     axios
-      .get(`http://localhost:8080/admin/getProject/${AdminId}`, { headers })
+      .get(`${process.env.REACT_APP_PROXY_URL}/admin/getProject/${AdminId}`, { headers })
       .then((res) => {
         if (res.status === 200) {
           setData(res.data.data);
@@ -58,7 +58,7 @@ export default function ClientDetails() {
   const [name, setName] = useState("");
   const handleSearch = async () => {
     const result = await axios.get(
-      `http://localhost:8080/client/search/${name}`
+      `${process.env.REACT_APP_PROXY_URL}/client/search/${name}`
     );
 
     if (result.status === 200) {

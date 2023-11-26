@@ -12,7 +12,7 @@ export default function DesignerProjectStatus() {
   const projectEmplyId = localStorage.getItem("projEmId");
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/designer/getPosts/${projectEmplyId}`)
+      .get(`${process.env.REACT_APP_PROXY_URL}/designer/getPosts/${projectEmplyId}`)
       .then((res) => {
         // console.log(res.data.result, "emply res");
         setData(res.data.result);

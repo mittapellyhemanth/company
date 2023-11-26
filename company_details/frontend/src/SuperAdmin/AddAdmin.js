@@ -74,7 +74,7 @@ const onSubmit = async (formData) => {
       const SuperAdminId = localStorage.getItem("unique_id")
     try {
       await axios
-        .post(`http://localhost:8080/superAdmin/addAdmin/${SuperAdminId}`,formData,{headers})
+        .post(`${process.env.REACT_APP_PROXY_URL}/superAdmin/addAdmin/${SuperAdminId}`,formData,{headers})
         .then((res) => {
           if (res.data.error) {
            return setError(res.data.error);

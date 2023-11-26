@@ -1,7 +1,6 @@
 import React from "react";
 
-import { BsPersonFillAdd } from "react-icons/bs";
-import { MdAdminPanelSettings } from "react-icons/md";
+
 import "../../Styles/SuperHome.css";
 
 import NavbarScroll from "../../components/Navbar/NavbarScroll";

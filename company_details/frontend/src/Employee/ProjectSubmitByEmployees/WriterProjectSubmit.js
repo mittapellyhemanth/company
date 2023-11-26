@@ -93,7 +93,7 @@ export default function WriterProjectSubmit() {
   const projectName = localStorage.getItem("ProjectName");
   const Name = localStorage.getItem("userName");
   const client = localStorage.getItem('Client')
-  const URL = `http://localhost:8080/employee/writer/project/submit/${employID}/${projectName}/${Name}/${client}`;
+  const URL = `${process.env.REACT_APP_PROXY_URL}/employee/writer/project/submit/${employID}/${projectName}/${Name}/${client}`;
 
   const onSubmit = async (formData, url) => {
     console.log(formData, url);

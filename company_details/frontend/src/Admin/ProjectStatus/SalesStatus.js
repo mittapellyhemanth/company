@@ -1,14 +1,11 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import CryptoJS from "crypto-js";
 
 export default function SalesStatus({data,comesFrom}){
   const [currentPage, setCurrentPage] = useState(1);
-    //...........pagination
-    // useEffect(()=>{
-
-    // },[data])
+    
     const itemsPerPage = 10; // Number of items per page
     const handlePagination = (pageNumber) => {
       setCurrentPage(pageNumber);
@@ -23,7 +20,7 @@ export default function SalesStatus({data,comesFrom}){
   const navigate = useNavigate('')
   const handleClick = async(_id)=>{
   
- await axios.get(`http://localhost:8080/admin/salesProject/One/View/${_id}`).then((res)=>{
+ await axios.get(`${process.env.REACT_APP_PROXY_URL}/admin/salesProject/One/View/${_id}`).then((res)=>{
     
  const result = res.data.data;
  const encryptSales = CryptoJS.AES.encrypt(

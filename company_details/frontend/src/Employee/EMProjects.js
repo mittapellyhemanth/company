@@ -18,7 +18,7 @@ export default function EMProjects() {
     // console.log(employeeId,"empyId");
     
     axios
-      .get(`http://localhost:8080/employee/details/${id}`)
+      .get(`${process.env.REACT_APP_PROXY_URL}/employee/details/${id}`)
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
@@ -55,7 +55,7 @@ export default function EMProjects() {
   const handleSearch = async () => {
     const id = localStorage.getItem("unique_id");
     await axios
-      .get(`http://localhost:8080/admin/oneProject/${id}/${name}`)
+      .get(`${process.env.REACT_APP_PROXY_URL}/admin/oneProject/${id}/${name}`)
       .then((result) => {
         if (result.status === 200) {
           setError("");

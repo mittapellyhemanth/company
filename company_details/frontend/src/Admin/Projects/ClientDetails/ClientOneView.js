@@ -16,7 +16,7 @@ export default function ClientOneView() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/client/details/${clientId}`)
+      .get(`${process.env.REACT_APP_PROXY_URL}/client/details/${clientId}`)
       .then((res) => {
         setData(res.data.data);
       });

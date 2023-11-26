@@ -79,7 +79,7 @@ const navigate = useNavigate()
     const adminId = localStorage.getItem('unique_id')
     try {
       await axios
-        .post(`http://localhost:8080/admin/addProject/${adminId}`, formData,{headers})
+        .post(`${process.env.REACT_APP_PROXY_URL}/admin/addProject/${adminId}`, formData,{headers})
         .then((res) => {
           
           if (res.data.error) {

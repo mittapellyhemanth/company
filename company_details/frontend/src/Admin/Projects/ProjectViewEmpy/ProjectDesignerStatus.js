@@ -22,7 +22,7 @@ export default function ProjectDesignerStatus(){
  useEffect(()=>{
 
    axios
-   .get(`http://localhost:8080/admin/DesignerOneProject/${projectEmplyId}/${projectName}`)
+   .get(`${process.env.REACT_APP_PROXY_URL}/admin/DesignerOneProject/${projectEmplyId}/${projectName}`)
    .then((res) => {
     
      setProjectData(res.data.data)

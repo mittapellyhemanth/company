@@ -4,7 +4,7 @@ export default function AddSEO() {
   //send url,naviga,seo
   const AdminId = localStorage.getItem("unique_id");
   const data = {
-    Url: `http://localhost:8080/admin/addSeo/${AdminId}`,
+    Url: `${process.env.REACT_APP_PROXY_URL}/admin/addSeo/${AdminId}`,
     Navlink: "/v2/em/empy",
   };
 
