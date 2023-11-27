@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import CryptoJS from "crypto-js";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
-
+import '../../../Admin/Employee/ReUseFunc.js/Filters.css'
 export default function ClientDetails() {
   const [data, setData] = useState([]);
   const [back, setBack] = useState(false);
@@ -72,8 +72,6 @@ export default function ClientDetails() {
   return (
     <>
       <div className="bg-img">
-        <div className="card-top">
-          {err && <h3>{err}</h3>}
           <div className="search">
             <input
               placeholder="ENTER  PROJECT  NAME"
@@ -89,6 +87,10 @@ export default function ClientDetails() {
               SEARCH
             </button>
           </div>
+          <div className="card-top-container">
+
+        <div className="card-top">
+          {err && <h3>{err}</h3>}
 
           {!data ? (
             <div className="heading backlink-title">DATA NOT FOUND</div>
@@ -140,6 +142,7 @@ export default function ClientDetails() {
             </Card>
           )}
         </div>
+          </div>
         {back ? (
           <button className="button-back" onClick={handleGoBack}>
             CANCEL

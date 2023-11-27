@@ -11,12 +11,17 @@
 }
 .card-top{
     width: 70vw;
-    
+    margin: auto;
     display: flex;
-    flex-wrap: wrap;
-align-items: flex-start;
-  
+    
 }
+/* .card-top-container{
+    width: 100%;
+    height: auto;
+   
+    background-color: red;
+    border: 5px solid black;
+} */
 .cards{
 
  display: flex;

@@ -111,8 +111,7 @@ export default function GetEmply({ url, NavigateUrl, type }) {
       {/* {flag ? links[0].userName : "woohooweb"} */}
 
       <div className="bg-img">
-        <div className="card-top">
-          {error && <span className="error"> {error}</span>}
+      {error && <span className="error"> {error}</span>}
           <div className="search">
             <input
               placeholder="ENTER  EMPLOYEE  NAME"
@@ -128,6 +127,10 @@ export default function GetEmply({ url, NavigateUrl, type }) {
               SEARCH
             </button>
           </div>
+          <div>
+
+        <div className="card-top">
+         
 
           {currentItems.length > 0 ? (
             currentItems.map((user) => {
@@ -183,6 +186,7 @@ export default function GetEmply({ url, NavigateUrl, type }) {
             </div>
           )}
         </div>
+          </div>
         {back ? (
           <button className="button-back" onClick={handleGoBack}>
             CANCEL

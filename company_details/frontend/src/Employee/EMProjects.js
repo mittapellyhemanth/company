@@ -94,7 +94,6 @@ let currentItems = []
   return (
     <>
       <div className="bg-img">
-        <div className="card-top">
               {error && <span className="error"> {error}</span>}
           <div className="search">
             <input
@@ -111,6 +110,9 @@ let currentItems = []
               SEARCH
             </button>
           </div>
+          <div>
+
+        <div className="card-top">
 
           {!data ? (
             <div className="heading backlink-title">DATA NOT FOUND</div>
@@ -164,6 +166,7 @@ let currentItems = []
               </Card>
             )}
         </div>
+          </div>
         <div className="pagination">
             <button className="prevbtn" onClick={() => handlePagination(currentPage - 1)} disabled={currentPage === 1}>
               PREVIOUS

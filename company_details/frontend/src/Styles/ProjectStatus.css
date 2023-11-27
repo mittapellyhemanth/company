@@ -195,14 +195,14 @@ height:auto;
   height: 300px;
   display: flex;
   flex-wrap: wrap;
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .data-box-img {
   display: flex;
   flex-wrap: wrap;
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin-top: 50px;
 }
 .data-box-img > .title {

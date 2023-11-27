@@ -104,7 +104,6 @@ export default function Projects(click) {
   return (
     <>
       <div className="bg-img">
-        <div className="card-top">
           <div className="search">
             <input
               placeholder="ENTER  PROJECT  NAME"
@@ -120,8 +119,9 @@ export default function Projects(click) {
               SEARCH
             </button>
           </div>
-
-          {!data ? (
+        <div >
+<div className="card-top">
+{!data ? (
             <div className="heading backlink-title">DATA NOT FOUND</div>
           ) : currentItems.length > 0 ? (
             currentItems.map((user) => {
@@ -179,6 +179,8 @@ export default function Projects(click) {
             </Card>
           )}
         </div>
+</div>
+       
         {back ? (
           <button className="button-back" onClick={handleGoBack}>
             CANCEL
