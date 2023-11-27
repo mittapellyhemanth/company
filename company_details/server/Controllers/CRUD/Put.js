@@ -15,7 +15,7 @@ if(updatedData.password){
 }
         // })
      
-        console.log(updatedData.password,'pass');
+        // console.log(updatedData.password,'pass');
 
         const updateStatus = await UserModel.findByIdAndUpdate(AdminId, updatedData, { new: true });
         if (!updateStatus) {

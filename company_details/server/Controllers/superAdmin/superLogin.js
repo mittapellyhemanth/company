@@ -5,7 +5,7 @@ const SuperAdminLogin = {};
 const LoginDetails = require('../../Routers/Login/Login')
 
 SuperAdminLogin.post = async (req,res)=>{
-    console.log(req);
+    // console.log(req);
     const loginCred =req.body;
     // console.log(loginCred.email);
     User.findOne({ email: loginCred.email }).then(user => {

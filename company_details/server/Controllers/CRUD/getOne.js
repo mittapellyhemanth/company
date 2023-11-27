@@ -1,7 +1,7 @@
 
 
 const getOne = async (req, res,designation) => {
-  console.log(req.params);
+  // console.log(req.params);
     try {
          await designation.findById(req.params.id)
         .then((result)=>{

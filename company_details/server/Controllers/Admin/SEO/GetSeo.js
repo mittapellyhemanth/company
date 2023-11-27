@@ -14,7 +14,7 @@ SeoDetails.get = async(req,res)=>{
 }
 
 SeoDetails.getOne = async(req,res)=>{
-  console.log(req.params);
+  // console.log(req.params);
   try {
   return  getOne(req,res,getSeo)
       

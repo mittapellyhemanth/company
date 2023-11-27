@@ -13,10 +13,10 @@ const LoginDetails = require("../Login/Login");
 
 AdminRouter.post("/login", async (req, res) => {
   const loginCred = req.body;
-  console.log(loginCred, "adminlog");
+  // console.log(loginCred, "adminlog");
   AddAdminModel.findOne({ email: loginCred.email })
     .then((user) => {
-      console.log(req.body, "login");
+      // console.log(req.body, "login");
 
       LoginDetails(req, res, user);
     })
@@ -75,7 +75,7 @@ if ( req.body.projectName && req.body.clientName && req.body.employeeAlloted && 
       message: "unable to save AddedprojectData",
       // detail: err   //this line to be used to check error
     });
-    console.log(err);
+    // console.log(err);
   }
 });
 
@@ -113,7 +113,7 @@ const getProject = async(req,res,Model)=>{
       })
     }
   } catch (error) {
-    console.log('eeeee');
+    // console.log('eeeee');
     res.status(500).json({
       err:"Internal Server Error"
     })
@@ -303,7 +303,7 @@ AdminRouter.get("/oneEmpy/getWriter/:Name",async(req,res)=>{
     })
   }
 } catch (error) {
-  console.log('eeeee');
+  // console.log('eeeee');
   res.status(500).json({
     err:"Internal Server Error"
   })
@@ -339,7 +339,7 @@ AdminRouter.get("/sales/oneEmpy/getSales/:Name", async(req,res)=>{
         })
       }
     } catch (error) {
-      console.log('eeeee');
+      // console.log('eeeee');
       res.status(500).json({
         err:"Internal Server Error"
       })
@@ -352,7 +352,7 @@ const ProjectOneView = async(req,res,model)=>{
       res.status(200).json({
         data:result
       })
-      console.log(result);
+      // console.log(result);
     })
   } catch (error) {
     
@@ -365,27 +365,27 @@ const ProjectOneView = async(req,res,model)=>{
 
 const GetoneSalesProjectView = require('../../Schemas/Employee/ProjectSubmit/SalesProject')
 AdminRouter.get("/salesProject/One/View/:_id",async(req,res)=>{
-  console.log(req.params._id);
+ 
  await ProjectOneView(req,res,GetoneSalesProjectView);
 })
 
 
 const GetoneSeoProjectView = require('../../Schemas/Employee/ProjectSubmit/SeoProject')
 AdminRouter.get("/seoProject/One/View/:_id",async(req,res)=>{
-  console.log(req.params._id);
+
  await ProjectOneView(req,res,GetoneSeoProjectView);
 })
 
 const GetoneWriterProjectView = require('../../Schemas/Employee/ProjectSubmit/WriterProject')
 AdminRouter.get("/writerProject/One/View/:_id",async(req,res)=>{
-  console.log(req.params._id);
+
  await ProjectOneView(req,res,GetoneWriterProjectView);
 })
 
 
 const GetoneDesignerProjectView = require('../../Schemas/Employee/ProjectSubmit/DesignerProject')
 AdminRouter.get("/designerProject/One/View/:_id",async(req,res)=>{
-  console.log(req.params._id);
+ 
  await ProjectOneView(req,res,GetoneDesignerProjectView);
 })
 
@@ -413,7 +413,7 @@ AdminRouter.post("/trackAttendance/:id", async (req, res) => {
     
   } catch (err) {
    
-    console.log(err);
+    // console.log(err);
   }
 });
 
@@ -425,7 +425,7 @@ AdminRouter.get("/employe/Attendance/:id",async(req,res)=>{
          })
         })
     } catch (error) {
-        console.log(error)
+        // console.log(error)
     }
 })
 

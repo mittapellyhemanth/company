@@ -7,7 +7,7 @@ const LeavesRouter =express.Router();
 //posting leave
 const LeavesPost = async(req,res,LeavesModel)=>{
   try {
- console.log(req.params);
+ 
     const { ReasonForAbsent, ChooseDate, NoOfDays,TotalNumOfDays } = req.body;
 
     const LeaveData = new LeavesModel({
@@ -81,7 +81,7 @@ const getLeaves = async(req,res,getModel)=>{
 const getOneLeave = async(req,res,getModel)=>{
     try {
     const id =req.params._id;
-    console.log(id);
+  
     const result =  await getModel.findOne({_id:id})
     if(result){
      res.status(200).json({
@@ -105,16 +105,12 @@ const getOneLeave = async(req,res,getModel)=>{
 // ..........................................GET,POST,GETONE,update LEAVES OF SEO ..................................................................................
 const SeoLeavesPost = require('../../Schemas/Employee/LeaveSubmission/SeoLeaves')
 LeavesRouter.post("/seo/:empyId/:Name", async (req, res) => {
-  console.log(req.params);
+
     await LeavesPost(req,res,SeoLeavesPost) 
 
 });
 
-// LeavesRouter.post("/seo/:_id", async (req, res) => {
-//     console.log(req.params);
-//       await LeavesPost(req,res,SeoLeavesPost) 
-  
-//   });
+
 
 LeavesRouter.get("/seo/getleaves", async(req,res)=>{
     await getLeaves(req,res,SeoLeavesPost) 

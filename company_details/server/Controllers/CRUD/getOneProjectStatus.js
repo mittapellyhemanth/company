@@ -10,7 +10,7 @@ const getOneProjectStatus = async (req, res,designation) => {
             });
   
           })
-          console.log(data,'dattttttttttttttttt');
+          // console.log(data,'dattttttttttttttttt');
         } catch (error) {
           res.status(500).json({
               message: "Internal server error",

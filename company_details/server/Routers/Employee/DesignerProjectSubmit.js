@@ -58,7 +58,7 @@ const upload = multer({ storage });
 
 
 router.post("/proj/submit/:id/:projectName/:Name/:clientName", upload.single("PostImage"),async (req,res)=>{
-  console.log("req",req.body,req.file);
+  
   try {
     const post = new PostModel({
       Name:req.params.Name,
@@ -110,7 +110,7 @@ router.get("/getPosts/:id",async (req,res)=>{
 // project one view
 router.get("/proj/view/:id", async (req, res) => {
   try {
-    console.log(req.params.id, "id");
+    
     await PostModel.findOne({_id:req.params.id}).then((result)=>{
        res.status(200).json({
         data: result,

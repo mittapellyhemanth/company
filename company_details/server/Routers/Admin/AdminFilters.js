@@ -12,7 +12,7 @@ const designerProjectFilter = require("../../Schemas/Employee/ProjectSubmit/Desi
 const searchQuery =async(req,res,Model)=>{
     try {
         const { Date, Type,Status, clientName, ProjectTitle, Name } = req.query;
-        console.log(Name, "name");
+        // console.log(Name, "name");
         const query = {};
         // Add parameters to the query object if they exist
         if (Date) query.Date = Date;

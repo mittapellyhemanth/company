@@ -29,9 +29,9 @@ clientRouter.get('/details/:id',async(req,res)=>{
 clientRouter.get('/search/:ClientName',async(req,res)=>{
     try {
         const Name = req.params.ClientName.toUpperCase()
-        console.log(Name);
+     
         const result = await getClients.findOne({clientName:Name})
-        console.log(result);
+    
         if(result){
             res.status(200).json({
               data:result
@@ -45,7 +45,6 @@ clientRouter.get('/search/:ClientName',async(req,res)=>{
             })
           }
         } catch (error) {
-          console.log('eeeee');
           res.status(500).json({
             err:"Internal Server Error"
           })

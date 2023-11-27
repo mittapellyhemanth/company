@@ -70,7 +70,7 @@ EmployeeRouter.post("/project", auth, async (req, res) => {
       message: "unable to save data",
       // detail: err   //this line to be used to check error
     });
-    console.log(err);
+    // console.log(err);
   }
 });
 
@@ -83,7 +83,7 @@ EmployeeRouter.get("/details/:id", async (req, res) => {
   try {
     const data = await getProjects.find({ employID: req.params.id }).sort({ createdAt: -1 });;
     res.status(200).json(data);
-    console.log(data, "data");
+    // console.log(data, "data");
   } catch (error) {
     res.status(500).json({
       message: "Internal server error",
@@ -97,7 +97,7 @@ EmployeeRouter.get("/details/:id", async (req, res) => {
 const SeoProjectSubmit = require("../../Schemas/Employee/ProjectSubmit/SeoProject");
 
 EmployeeRouter.post("/project/submit/:id/:projectName/:Name/:clientName", async (req, res) => {
-  console.log(req.body,req.params);
+  // console.log(req.body,req.params);
   try {
     const emplyId = req.params.id.toUpperCase();
 
@@ -125,7 +125,7 @@ EmployeeRouter.post("/project/submit/:id/:projectName/:Name/:clientName", async 
       
     
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -134,7 +134,7 @@ async function ProjectStatus(req,res,Model){
   try {
     // console.log(req.params.id, "id");
     const data = await Model.find({ EmployeeId: req.params.id }).sort({ createdAt: -1 });
-    console.log(data);
+    // console.log(data);
    return res.status(200).json({
       data: data,
       message: "got the status",
@@ -149,9 +149,9 @@ EmployeeRouter.get("/proj/status/:id", async (req, res) => {
 //....................................................get project Admin checks status function   ProjectDetailsStatus()
 async function ProjectDetailsStatus(req,res,Model){
   try {
-    console.log(req.params, "id");
+  
     const data = await Model.find({ EmployeeId: req.params.id,ProjectTitle:req.params.projectName }).sort({ createdAt: -1 });
-    console.log(data);
+    
    return res.status(200).json({
       data: data,
       message: "got the status",
@@ -167,7 +167,7 @@ EmployeeRouter.get("/proj/status/:id/:projectName", async (req, res) => {
 
 EmployeeRouter.get("/proj/view/:id", async (req, res) => {
   try {
-    console.log(req.params.id, "id");
+   
     await SeoProjectSubmit.findOne({_id:req.params.id}).sort({ createdAt: -1 }).then((result)=>{
        res.status(200).json({
         data: result,
@@ -185,7 +185,7 @@ EmployeeRouter.get("/proj/view/:id", async (req, res) => {
 const WriterProjectSubmit = require("../../Schemas/Employee/ProjectSubmit/WriterProject");
 EmployeeRouter.post("/writer/project/submit/:id/:projectName/:Name/:clientName", async (req, res) => {
   try {
-    console.log(req,"req",req.params.Name);
+   
     const emplyId = req.params.id.toUpperCase();
 
     
@@ -226,7 +226,7 @@ EmployeeRouter.get("/writer/proj/status/:id", async (req, res) => {
 const SalesProjectSubmit = require("../../Schemas/Employee/ProjectSubmit/SalesProject");
 EmployeeRouter.post("/sales/project/submit/:id/:projectName/:Name/:clientName", async (req, res) => {
   try {
-    console.log(req,"req");
+  
     const emplyId = req.params.id.toUpperCase();
  // Iterating through form data array and creating new project documents
         const {Location,Name,PhoneNum,Email,Source, Enquiry, Remark } = req.body;
@@ -247,7 +247,7 @@ EmployeeRouter.post("/sales/project/submit/:id/:projectName/:Name/:clientName", 
       
     
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -266,7 +266,7 @@ EmployeeRouter.get("/sales/proj/status/:id", async (req, res) => {
 const breakTime = require("../../Schemas/Employee/BreakTime")
 EmployeeRouter.post("/breakTime/:id",async(req,res)=>{
        try {
-        console.log(req.body);
+       
             const {Date, BreakTaken} = req.body;
           const timeData = new breakTime({
             EmployeeId:req.params.id,
@@ -274,16 +274,16 @@ EmployeeRouter.post("/breakTime/:id",async(req,res)=>{
             BreakTaken
           })
           await timeData.save();
-          console.log(timeData);
+         
           res.status(200).json(timeData);
        } catch (error) {
-        console.log(error);
+        // console.log(error);
        }
 })
 
 EmployeeRouter.get("/previousbreakTime/:id/:date",async(req,res)=>{
   try {
-   console.log(req.body);
+  
     
      
      await breakTime.find({EmployeeId:req.params.id,Date:req.params.date} ).sort({ createdAt: -1 }).then((result)=>{
@@ -292,13 +292,13 @@ EmployeeRouter.get("/previousbreakTime/:id/:date",async(req,res)=>{
      })
     //  console.log(timeData);
   } catch (error) {
-   console.log(error);
+  //  console.log(error);
   }
 })
 
 EmployeeRouter.delete("/previousbreakTime/taken/:id/:date",async(req,res)=>{
   try {
-   console.log(req.body);
+  
     
      
      await breakTime.deleteMany({EmployeeId:req.params.id,Date:req.params.date} ).then((result)=>{
@@ -307,7 +307,7 @@ EmployeeRouter.delete("/previousbreakTime/taken/:id/:date",async(req,res)=>{
      })
     //  console.log(timeData);
   } catch (error) {
-   console.log(error);
+  //  console.log(error);
   }
 })
 

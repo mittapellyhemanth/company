@@ -5,12 +5,12 @@ require('dotenv').config();
 
 const LoginDetails = async function(req,res,user){
     const loginCred =req.body;
-    console.log(loginCred,'req');
+   
     if (user) {  // will give response from DB
 
         // if user found then it will encrypt password and compare with DB password 
      return   bcrypt.compare(loginCred.password, user.password).then(response => {
-        console.log(user,"aut");
+     
             if (response) {  // password is correct then create web token
                 const jwtToken = jwt.sign({
                     email: user.email,

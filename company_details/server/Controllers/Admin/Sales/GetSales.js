@@ -14,7 +14,7 @@ SalesDetails.get = async(req,res)=>{
 }
 
 SalesDetails.getOne = async(req,res)=>{
-  console.log(req.params);
+  // console.log(req.params);
   try {
   return  getOne(req,res,getSales)
       

@@ -4,7 +4,7 @@ const getProjects = {};
 
 getProjects.get = async (req, res) => {
   try {
-    console.log("Getting the properties",req.params);
+    // console.log("Getting the properties",req.params);
 
     await ProjectsDetails.find({addedAdminId:req.params.id}).then((result) => {
         res.status(200).json({
@@ -24,7 +24,7 @@ getProjects.get = async (req, res) => {
 
 getProjects.getOne = async (req, res) => {
   try {
-    console.log("Getting the properties",req.params);
+    // console.log("Getting the properties",req.params);
 
     await ProjectsDetails.findOne({addedAdminId:req.params.addedAdminId,projectName:req.params.projectName}).then((result) => {
         res.status(200).json({
