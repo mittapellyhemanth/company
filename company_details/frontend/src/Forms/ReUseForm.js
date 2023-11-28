@@ -9,7 +9,7 @@ import { FaRegEye } from "react-icons/fa6";
 export default function ReUseForm({ Method, inputs, onSubmit, btnText, urlData }) {
   const [formData, setFormData] = useState({});
   const [showPassword, setShowPassword] = useState(false);
-
+  const [dateError, setDateError] = useState('');
   useEffect(() => {
     // Reset password visibility whenever form data changes
     setShowPassword(false);
@@ -19,6 +19,9 @@ export default function ReUseForm({ Method, inputs, onSubmit, btnText, urlData }
     const { name, value } = e.target;
    
     setFormData({ ...formData, [name]: value });
+    if (name === 'StartDate') {
+      validateDate(value); // Validate the date when date field changes
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -30,14 +33,26 @@ export default function ReUseForm({ Method, inputs, onSubmit, btnText, urlData }
 
     onSubmit({ ...formData }, urlData);
   };
+  const validateDate = (dateString) => {
+    const enteredDate = new Date(dateString);
+    const currentDate = new Date();
+
+    if (enteredDate < currentDate) {
+      setDateError('Date should not be before today.');
+    } else {
+      setDateError('');
+    }
+  };
+
 
   return (
     <>
+      {dateError && <p className="error">{dateError}</p>}
       <Form method={Method} onSubmit={handleSubmit} encType="multipart/form-data">
         {inputs.map((input) => (
           <div key={input.name} className={input.clasename}>
             <Form.Group className="mb-3 input-text" controlId={`formGroup${input.name}`}>
-              {input.type !== "select" && input.type !== "password" && (
+              {input.type !== "select" && input.type !== "password" && input.type !== "date" && (
                 <>
                   <Form.Control
                     type={input.type}
@@ -52,7 +67,19 @@ export default function ReUseForm({ Method, inputs, onSubmit, btnText, urlData }
                  
                 </>
               )}
-              
+               {input.type === "date" && (
+                    <>
+                      <Form.Control
+                        type={input.type}
+                        placeholder={input.placeholder}
+                        name={input.name}
+                        value={formData[input.name] || ""}
+                        onChange={handleChange}
+                        required={input.required}
+                      />
+                    
+                    </>
+                  )}
                 {input.type === "password" && (
                     <Form.Group className="mb-3 input-text password-input "controlId={`formGroup${input.name}`}>
                       <div className="input-group ">

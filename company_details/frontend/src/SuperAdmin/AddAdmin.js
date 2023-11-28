@@ -66,7 +66,7 @@ export default function AddAdmin() {
       name: "Website",
     },
   ];
-  
+
   const onSubmit = async (formData) => {
     const key = localStorage.getItem("token");
     const headers = {
@@ -84,7 +84,8 @@ export default function AddAdmin() {
           setError(res.data.error);
         } else {
           setError("");
-          setSucess("Admin Added Sucessfully")
+          setSucess("Admin Added Sucessfully");
+
           // navigate("/v1/Admins");
         }
       }
@@ -96,16 +97,28 @@ export default function AddAdmin() {
   return (
     <>
       <div className="form-addpro">
-       
-{sucess && <div className="sucess-admin">{sucess}</div>}
+        {sucess && <div className="sucess-admin">{sucess}</div>}
         {err && <div className="error">{err}</div>}
-        <div></div>
-        <ReUseForm
-          Method="POST"
-          inputs={input}
-          onSubmit={onSubmit}
-          btnText="Submit"
-        />
+        {sucess ? (
+          <>
+            {" "}
+            <ReUseForm
+              Method="POST"
+              inputs={input}
+              onSubmit={onSubmit}
+              btnText="Submit"
+            />
+          </>
+        ) : (
+          <>
+            <ReUseForm
+              Method="POST"
+              inputs={input}
+              onSubmit={onSubmit}
+              btnText="Submit"
+            />
+          </>
+        )}
       </div>
       {/* </div> */}
     </>
