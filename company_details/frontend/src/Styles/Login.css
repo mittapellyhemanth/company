@@ -54,6 +54,21 @@
     margin-top: 10px;
 
 }
+.input-group>input{
+
+    margin: auto;
+    text-align: center;
+}
+.password-input:hover{
+    border: 3px solid #86b7fe;
+}
+.password-input:focus{
+    
+    border: 3px solid #86b7fe;
+}
+.password-input.active{
+    border: 3px solid #86b7fe;
+}
 
 .error{
     color: red;

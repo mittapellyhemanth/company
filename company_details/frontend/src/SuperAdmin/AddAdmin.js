@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import ReUseForm from "../Forms/ReUseForm";
 import axios from "axios";
-import DetailsContext from "../Context/CreateContext";
+
 import "../Styles/SuperHome.css";
 import { useNavigate } from "react-router-dom";
 
 export default function AddAdmin() {
-  const { err, setError } = useContext(DetailsContext);
+  const [err, setError] = useState("");
+  const [sucess, setSucess] = useState("");
   const input = [
     {
       type: "text",
@@ -14,7 +15,12 @@ export default function AddAdmin() {
       name: "Name",
       required: true,
     },
-    { type: "date", placeholder: "START DATE", name: "StartDate", required: true },
+    {
+      type: "date",
+      placeholder: "START DATE",
+      name: "StartDate",
+      required: true,
+    },
     {
       type: "number",
       placeholder: "PHONE NUMBER ",
@@ -37,51 +43,51 @@ export default function AddAdmin() {
       type: "text",
       placeholder: "AADHAAR",
       name: "aadhaar",
-    
     },
     {
       type: "text",
       placeholder: "COMPANY NAME",
       name: "CompanyName",
-    
     },
     {
       type: "text",
       placeholder: "COMPANY LOCATION",
       name: "CompanyLocation",
-    
     },
 
     {
       type: "text",
       placeholder: "INDUSTRY",
       name: "Industry",
-    
     },
     {
       type: "text",
       placeholder: "WEBSITE",
       name: "Website",
-    
     },
   ];
-const navigate = useNavigate()
-const onSubmit = async (formData) => {
+  
+  const onSubmit = async (formData) => {
     const key = localStorage.getItem("token");
-      const headers = {
-        Authorization: key
-      };
-      const SuperAdminId = localStorage.getItem("unique_id")
+    const headers = {
+      Authorization: key,
+    };
+    const SuperAdminId = localStorage.getItem("unique_id");
     try {
-      await axios
-        .post(`${process.env.REACT_APP_PROXY_URL}/superAdmin/addAdmin/${SuperAdminId}`,formData,{headers})
-        .then((res) => {
-          if (res.data.error) {
-           return setError(res.data.error);
-          }
-          navigate('/v1/Admins')
-      
-        });
+      const res = await axios.post(
+        `${process.env.REACT_APP_PROXY_URL}/superAdmin/addAdmin/${SuperAdminId}`,
+        formData,
+        { headers }
+      );
+      if (res) {
+        if (res.data.error) {
+          setError(res.data.error);
+        } else {
+          setError("");
+          setSucess("Admin Added Sucessfully")
+          // navigate("/v1/Admins");
+        }
+      }
     } catch (error) {
       // console.log(error,'error');
     }
@@ -89,20 +95,19 @@ const onSubmit = async (formData) => {
 
   return (
     <>
-  <div className="form-addpro">
-  {/* <div className="form-addpro-box"> */}
-    <div>
-
-      {err && <h6 className="error">{err}</h6>}
-  </div>
-  <ReUseForm
-    Method="POST"
-    inputs={input}
-    onSubmit={onSubmit}
-    btnText="Submit"
-    />
-</div>
-  {/* </div> */}
+      <div className="form-addpro">
+       
+{sucess && <div className="sucess-admin">{sucess}</div>}
+        {err && <div className="error">{err}</div>}
+        <div></div>
+        <ReUseForm
+          Method="POST"
+          inputs={input}
+          onSubmit={onSubmit}
+          btnText="Submit"
+        />
+      </div>
+      {/* </div> */}
     </>
   );
 }

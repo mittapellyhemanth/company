@@ -8,10 +8,20 @@
     height: 100vh;
 
 }
+.sucess-admin{
 
+    font-size: 1.2rem;
+   color: green;
+   border: 1px solid green;
+   margin-bottom: 20px;
+   padding: 3px;
+box-shadow: 10px 10px 1px 3px 2px green;
+}
 .error{
     color:red;
-    /* font-size: 0.8rem; */
+    /* text-transform: uppercase; */
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 @media only screen and (max-width:450px) {
     .grid-child-container{

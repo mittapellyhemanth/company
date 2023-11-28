@@ -8,10 +8,7 @@ import "../Styles/EmpyCards.css";
 import { useNavigate } from "react-router-dom";
 export default function Admins() {
   const [data, setData] = useState([]);
-  // const [clicked,setClicked] = useState(false)
-  // const [userId,setUserId] = useState('')
-  // const{auth,setAuth}=useContext(DetailsContext);
-  // setAuth(headers)
+  
 
   useEffect(() => {
     const key = localStorage.getItem("token");
@@ -27,8 +24,7 @@ export default function Admins() {
       .then((res) => {
        
         if (res.status === 200) {
-          console.log(res.data.data, "got");
-
+         
           setData(res.data.data);
         }
       })

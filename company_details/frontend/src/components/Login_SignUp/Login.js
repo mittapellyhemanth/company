@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import "../../Styles/Login.css";
+import React, { useContext, useEffect, useState } from "react";
 
 import ReUseForm from "../../Forms/ReUseForm";
-import "../../Styles/Login.css";
 
 import DetailsContext from "../../Context/CreateContext";
 // import LoginCheck from "./LoginCheck";
@@ -13,7 +13,7 @@ import NavbarScroll from "../Navbar/NavbarScroll";
 export default function Login() {
 
   const { personLogin ,setPersonName,setFlag } = useContext(DetailsContext);
-// const[err,setError] = useState('')
+const[err,setError] = useState('')
   const navigate = useNavigate();
 useEffect(()=>{
   setPersonName(' ');
@@ -26,9 +26,10 @@ useEffect(()=>{
   ];
 
   const LoginCheck = async (formData,serverURL)=>{
+  
     try {
         const res = await axios.post(serverURL, formData); // fetching the post url and form data
-        
+     
         localStorage.setItem("userName", res.data.user.Name);
         localStorage.setItem("token", res.data.Token);
         localStorage.setItem("unique_id",res.data.user.unique_id)
@@ -36,8 +37,10 @@ useEffect(()=>{
         localStorage.setItem("Id", res.data.user._id);
         localStorage.setItem("designation", res.data.user.designation);
      
+    
       
-        return res;    // returning response 
+        return res
+       // returning response 
       } catch (error) {
     
         return error; 
@@ -45,17 +48,21 @@ useEffect(()=>{
 };
 
   const navigation = async (formData , url, serverURL) => {
-    try {
-      let res = await LoginCheck(formData , serverURL)
   
+    try {
+      const res = await LoginCheck(formData , serverURL)
+  
+ 
       if (res.status === 200) {
         
         navigate(url);
+      }else{
+        
+        setError(res.response.data.message);
       }
-      if (res.status === 400) {
-       
-        // setError(res.message);
-      }
+
+   
+      
       
     } catch (error) {
       // console.log(error);
@@ -117,6 +124,7 @@ let LoginTime = hours + ":" + minutes + ":" + seconds + " " + ampm
     <div className="Login-container">
       <div className="login-text">
         <p>Enter your credentials</p>
+      <div className="error">{err}</div>
       </div>
       <div className="Login">
         <ReUseForm Method='POST' inputs={input} onSubmit={submitLogin} btnText='Sign In' />
