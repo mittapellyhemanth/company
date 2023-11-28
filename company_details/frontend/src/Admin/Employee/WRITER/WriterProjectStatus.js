@@ -19,7 +19,7 @@ export default function WriterProjectStatus() {
         `${process.env.REACT_APP_PROXY_URL}/employee/writer/proj/status/${projectEmplyId}`
       )
       .then((res) => {
-        // console.log(res, "emply res");
+       
         setData(res.data.data);
       });
   }, [projectEmplyId]);

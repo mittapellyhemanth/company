@@ -5,18 +5,18 @@ import "../Styles/Login.css";
 import './Form.css'
 
 export default function ReUseForm({ Method, inputs, onSubmit, btnText,urlData }) {
-  console.log(urlData,'data');
+ 
   const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name,value);
+   
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(urlData,'ff');
+   
     onSubmit({...formData},urlData);
   };
 

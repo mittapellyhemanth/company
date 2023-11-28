@@ -62,14 +62,7 @@ export default function BreakTime() {
     setTimerRunning(false);
 
     const URL = `${process.env.REACT_APP_PROXY_URL}/employee/breakTime/${employID}`; //post
-    // function timeToSeconds(time) {
-    //   const [hours, minutes] = time.split(":").map(Number);
-    //   return hours * 3600 + minutes * 60;
-    // }
    
-    
-
-    //  console.log(TotalBreakForToday,"break");
 
     // convert second to time format
 

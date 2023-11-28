@@ -58,7 +58,7 @@ export default function DesignerStatus({ data, comesFrom }) {
       setSucessfully("Deleted Successfully");
       await window.location.reload();
     } catch (error) {
-      console.error('Error deleting image:', error);
+      // console.error('Error deleting image:', error);
     }
   };
 
@@ -77,7 +77,7 @@ export default function DesignerStatus({ data, comesFrom }) {
       link.click();
       link.parentNode.removeChild(link);
     } catch (error) {
-      console.error('Error downloading image:', error);
+      // console.error('Error downloading image:', error);
     }
   };
 

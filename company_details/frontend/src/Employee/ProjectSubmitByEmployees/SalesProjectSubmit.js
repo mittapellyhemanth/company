@@ -77,7 +77,7 @@ export default function SalesProjectSubmit() {
   const URL = `${process.env.REACT_APP_PROXY_URL}/employee/sales/project/submit/${employID}/${projectName}/${Name}/${client}`;
 
   const onSubmit = async (formData, url, TIMETAKEN) => {
-    console.log(formData, url);
+   
     const dataToSend = { ...formData, TimeTaken: TIMETAKEN };
     try {
       // Send POST request to the server
@@ -87,7 +87,7 @@ export default function SalesProjectSubmit() {
 
       // console.log("Projects successfully added:", response.data);
     } catch (error) {
-      console.error("Error adding projects:", error);
+      // console.error("Error adding projects:", error);
     }
   };
 

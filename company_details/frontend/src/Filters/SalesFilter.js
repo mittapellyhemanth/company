@@ -3,7 +3,7 @@ import FilterForm from "./FilterForm";
 
 
 export default function SalesFilter({searchGet,comesFrom}) {
-  console.log(searchGet,comesFrom,"comesss");
+  
   // const history = useHistory();
   // const [searchResult, setSearchResult] = useState([]);
   const [error, setError] = useState('');
@@ -46,7 +46,7 @@ export default function SalesFilter({searchGet,comesFrom}) {
   
 
 const onSubmit = async(formData)=>{
-  console.log(formData,"gggggg",formData.Name);
+ 
   //:Date?/:Type?/:clientName?/:ProjectTitle?/:Name?
   if (!formData.Date &&  !formData.clientName && !formData.ProjectTitle && !formData.Name) {
     setError("At least one parameter is required for search");
@@ -60,7 +60,7 @@ const onSubmit = async(formData)=>{
 
       
       const queryParams = new URLSearchParams(formData).toString();
-      // console.log(queryParams,"eee");
+     
      let newUrl = ``;
      if(comesFrom){
       newUrl = `/v2/das/sales-your-search-route?${queryParams}`;

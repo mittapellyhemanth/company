@@ -15,7 +15,7 @@ export default function FilterForm({ Method, urlData, inputs, onSubmit,formData,
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(formData, "formdata");
+  
     onSubmit(formData, urlData);
   };
   return (

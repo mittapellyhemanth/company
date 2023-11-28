@@ -35,7 +35,7 @@ action
   },[setErr])
   const handleInputChange = (e,TIMETAKEN) => {
     const { name, value } = e.target;
-    console.log(name,value);
+   
     if (name !== 'TimeTaken') {
       setFormData({ ...formData, [name]: value });
     }
@@ -43,7 +43,7 @@ action
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData,'formdata');
+ 
     onSubmit(formData,urlData, TIMETAKEN)
   };
   return (

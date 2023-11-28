@@ -12,7 +12,7 @@ export default function SeoLeaveTracker() {
           `${process.env.REACT_APP_PROXY_URL}/leave/seo/getleaves`
         );
         setData(result.data.data);
-        // console.log(result.data.data);
+       
       } catch (error) {
         // console.error('Error fetching data:', error);
       }

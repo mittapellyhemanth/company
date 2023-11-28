@@ -22,7 +22,7 @@ useEffect(()=>{
 
   const input = [
     { type: 'email', placeholder: 'USER NAME', name: 'email', required: true },
-    { type: 'password', placeholder: 'PASSWORD', name: 'password', required: true }
+    { type: "password", placeholder: 'PASSWORD', name: 'password', required: true }
   ];
 
   const LoginCheck = async (formData,serverURL)=>{

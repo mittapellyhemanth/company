@@ -12,7 +12,7 @@ export default function DesignerAttendanceStatus(){
     axios
       .get(`${process.env.REACT_APP_PROXY_URL}/admin/employe/Attendance/${EmplyId}`)
       .then((res) => {
-        // console.log(res.data.data, "emply res");
+      
         setData(res.data.data);
       });
   }, [EmplyId]);

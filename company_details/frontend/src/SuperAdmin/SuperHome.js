@@ -18,18 +18,7 @@ const sidebarData = [
   {label:'Admins', to:'admins'},
   {label:'Add Admin', to:'addAdmin'}
 ];
-// useEffect(() => {
-//   axios
-//     .get()
-//     .then((res) => {
-//       // console.log(res)
-//       if (res.status === 200) {
-      
-//          setData(res.data.data);
-//       }
-//     })
-//     .catch((err) => console.log(err));
-// }, []);
+
   return (
     <>
       <div className="grid-container">

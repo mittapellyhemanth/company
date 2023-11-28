@@ -21,9 +21,9 @@ export default function GetEmply({ url, NavigateUrl, type }) {
     axios
       .get(url, { headers })
       .then((res) => {
-        console.log(url)
+      
         if (res.status === 200) {
-          console.log(res.data.data, "got");
+          
 
           setData(res.data.data);
         }
@@ -35,7 +35,7 @@ export default function GetEmply({ url, NavigateUrl, type }) {
   const handleClick = (emplyId, designation) => {
     localStorage.setItem("projEmId", emplyId);
 
-    // console.log(designation);
+  
     if (designation === "SEO") {
        navigate(NavigateUrl);
     }

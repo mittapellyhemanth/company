@@ -75,8 +75,7 @@ export default function ProjSend() {
       
       const newState = [...prevState];
       newState[index][inputName] = value;
-      console.log(newState,"newstate");
-     
+   
       return newState;
     });
   };
@@ -84,7 +83,6 @@ export default function ProjSend() {
   const handleSubmit = async (e) => {
     
     e.preventDefault();
-    // console.log(formData,'formdata');
     let newData = []
     for(let i=0;i<formData.length;i++){
       let obj = formData[i];
@@ -92,7 +90,7 @@ let values =  Object.values(obj)
 let totalValues = 0
 let emptyValues = 0
       for(let i=0;i<values.length;i++){
-        // console.log(values[i],i, "prev");
+       
          if(values[i] !== ''){
           totalValues++
          }else{
@@ -116,10 +114,10 @@ if(designation === 'SEO'){
       `${process.env.REACT_APP_PROXY_URL}/employee/project/submit`,
       formData
     );
-    console.log("Projects successfully added:", response.data);
+  
    
   } catch (error) {
-    console.error("Error adding projects:", error);
+    // console.error("Error adding projects:", error);
     
   }
 }
@@ -130,10 +128,10 @@ if(designation === 'DESIGNER'){
       `${process.env.REACT_APP_PROXY_URL}/employee/project/submit`,
       formData
     );
-    console.log("Projects successfully added:", response.data);
+  
    
   } catch (error) {
-    console.error("Error adding projects:", error);
+    // console.error("Error adding projects:", error);
     
   }
 }  

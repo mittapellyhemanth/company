@@ -19,20 +19,20 @@ export default function Admins() {
       Authorization: key,
     };
     const superAdminId = localStorage.getItem("unique_id");
-    console.log(superAdminId, "super");
+   
     axios
       .get(`${process.env.REACT_APP_PROXY_URL}/superAdmin/admins/${superAdminId}`, {
         headers,
       })
       .then((res) => {
-        // console.log(res)
+       
         if (res.status === 200) {
           console.log(res.data.data, "got");
 
           setData(res.data.data);
         }
       })
-      .catch((err) => console.log(err));
+      // .catch((err) => console.log(err));
   }, []);
 
   const navigate = useNavigate();

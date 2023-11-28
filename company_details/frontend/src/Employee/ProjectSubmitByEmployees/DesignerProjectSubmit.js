@@ -61,7 +61,7 @@ export default function DesignerProjectSubmit() {
       formDataToSend.append("Type", Type);
       formDataToSend.append("description", description);
       formDataToSend.append("Date", date);
-      // console.log(formDataToSend,"formmmmm");
+      
       const EmplyId = localStorage.getItem("unique_id");
       const projectName = localStorage.getItem("ProjectName");
       const Name = localStorage.getItem("userName");

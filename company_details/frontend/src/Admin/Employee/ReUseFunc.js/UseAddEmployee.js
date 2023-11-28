@@ -69,7 +69,7 @@ export default function UseAddEmployee({ url }) {
         } else {
           return navigate(url.Navlink);
         }
-        // console.log(res);
+        
       });
     } catch (error) {
       // console.log(error,'error');

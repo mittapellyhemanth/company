@@ -22,12 +22,12 @@ export default function Projects(click) {
     axios
       .get(`${process.env.REACT_APP_PROXY_URL}/admin/getProject/${AdminId}`, { headers })
       .then((res) => {
-        // console.log(res)
+  
         if (res.status === 200) {
           setData(res.data.data);
         }
       })
-      .catch((err) => console.log(err));
+      // .catch((err) => console.log(err));
   }, []);
 
   const navigate = useNavigate();
@@ -66,7 +66,7 @@ export default function Projects(click) {
   };
 
   const [name, setName] = useState("");
-  // console.log(name);
+ 
   const handleSearch = async () => {
     await axios
       .get(`${process.env.REACT_APP_PROXY_URL}/admin/oneProject/${name}`)

@@ -95,7 +95,7 @@ export default function SeoProjectSubmit() {
   const URL = `${process.env.REACT_APP_PROXY_URL}/employee/project/submit/${employID}/${projectName}/${Name}/${client}`;
 
   const onSubmit = async (formData, url, TIMETAKEN) => {
-    console.log(formData, url);
+  
     const dataToSend = { ...formData, TimeTaken: TIMETAKEN };
     try {
       // Send POST request to the server
@@ -104,7 +104,7 @@ export default function SeoProjectSubmit() {
 
       // console.log("Projects successfully added:", response.data);
     } catch (error) {
-      console.error("Error adding projects:", error);
+      // console.error("Error adding projects:", error);
     }
   };
 

@@ -71,7 +71,7 @@ const Logout = async () => {
 
     return true; // Indicate successful logout
   } catch (error) {
-    console.error("Error during logout:", error);
+    // console.error("Error during logout:", error);
     return false; // Indicate unsuccessful logout
   }
 };

@@ -56,14 +56,14 @@ export default function Application() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const key = localStorage.getItem("token");
+    // const key = localStorage.getItem("token");
     const emplyId = localStorage.getItem("unique_id")
     const type = localStorage.getItem("designation")
     const Name = localStorage.getItem("userName")
-    const headers = {
-      Authorization: key,
-    };
-    console.log({...formData},{headers});
+    // const headers = {
+    //   Authorization: key,
+    // };
+    // 
 
     const PostData = async(URL,formData)=>{
      await axios.post(URL, { ...formData }).then((res) => {

@@ -96,7 +96,7 @@ export default function WriterProjectSubmit() {
   const URL = `${process.env.REACT_APP_PROXY_URL}/employee/writer/project/submit/${employID}/${projectName}/${Name}/${client}`;
 
   const onSubmit = async (formData, url) => {
-    console.log(formData, url);
+ 
     try {
       // Send POST request to the server
        await axios.post(url, formData);
@@ -105,7 +105,7 @@ export default function WriterProjectSubmit() {
     } catch (error) {
       setSucess("");
 
-      console.error("Error adding projects:", error);
+      // console.error("Error adding projects:", error);
     }
   };
 

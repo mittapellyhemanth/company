@@ -1,17 +1,16 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import DetailsContext from "../../Context/CreateContext";
 
 import { useNavigate } from "react-router-dom";
 // /proj/status/:id/:projectName
 export default function ProjectView() {
-  const [data, setData] = useState({});
-  const { ProjectData, designationType, projectView, setProjectView } =
-    useContext(DetailsContext);
-  console.log(ProjectData, designationType);
+  
+  const { ProjectData, setProjectView } =   useContext(DetailsContext);
+ 
 
   const navigate = useNavigate();
   const handleClick = (i) => {
-    console.log(i, "INDEX");
+ 
 
     setProjectView(data[i]);
     navigate("/v2/writer/view/project/status");

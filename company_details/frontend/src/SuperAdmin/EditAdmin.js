@@ -64,7 +64,7 @@ export default function EditAdmin() {
   ];
   const navigate = useNavigate();
   const onSubmit = async (formData) => {
-    console.log(formData, id);
+  
     const key = localStorage.getItem("token");
     const headers = {
       Authorization: key
@@ -73,7 +73,7 @@ export default function EditAdmin() {
       await axios
         .put(`${process.env.REACT_APP_PROXY_URL}/superAdmin/admin/update/${id}`, formData,{headers})
         .then((res) => {
-          console.log(res, "ress");
+        
           if (res.data.error) {
             return setError(res.data.error);
           }

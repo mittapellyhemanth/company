@@ -3,8 +3,7 @@ import FilterForm from "./FilterForm";
 
 
 export default function WriterFilter({searchGet,comesFrom}) {
-  // const history = useHistory();
-  // const [searchResult, setSearchResult] = useState([]);
+
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     Date: "",
@@ -78,7 +77,7 @@ export default function WriterFilter({searchGet,comesFrom}) {
   
 
 const onSubmit = async(formData)=>{
-  console.log(formData,"gggggg",formData.Name);
+
   //:Date?/:Type?/:clientName?/:ProjectTitle?/:Name?
   if (!formData.Date && !formData.Type && !formData.clientName && !formData.ProjectTitle && !formData.Name) {
     setError("At least one parameter is required for search");
@@ -92,7 +91,7 @@ const onSubmit = async(formData)=>{
   
       
       const queryParams = new URLSearchParams(formData).toString();
-      console.log(queryParams,"eee");
+     
       let newUrl=``;
       if(comesFrom){
 

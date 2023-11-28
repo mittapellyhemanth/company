@@ -10,7 +10,7 @@ import './AdminView.css'
 // import DetailsContext from "../Context/CreateContext";
 
 export default function AdminView(){
-    console.log('data');
+    
     const [getOneData,setGetOneData]=useState([])
   
    
@@ -29,7 +29,7 @@ export default function AdminView(){
         // console.log(res.data.data,'got');
             
            setGetOneData(res.data.data);
-          console.log(res.data.data.Name,'name');
+      
            localStorage.setItem("name",res.data.data.Name);
            localStorage.setItem("address",res.data.data.address);
            localStorage.setItem("email",res.data.data.email);
@@ -37,7 +37,7 @@ export default function AdminView(){
 
       }
   })
-  .catch((err) => console.log(err));
+  // .catch((err) => console.log(err));
    },[])
   
   const navigate =useNavigate();
@@ -70,7 +70,7 @@ const handleDelete =()=>{
 
     }
 })
-.catch((err) => console.log(err));
+// .catch((err) => console.log(err));
 }
     return<>
    

@@ -80,7 +80,7 @@ const onSubmit = async (formData) => {
            return setError(res.data.error);
           }
           navigate('/v1/Admins')
-          // console.log(res);
+      
         });
     } catch (error) {
       // console.log(error,'error');

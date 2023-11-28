@@ -22,12 +22,12 @@ const getDetails = async(url,token)=>{
     .get(url,token)
     .then((res) => {
       if (res.status === 200) {
-        console.log(res);
+      
         return  setOneData( res.data.data)
       ;
       }
     })
-    .catch((err) => console.log(err));
+    // .catch((err) => console.log(err));
 
 }
   useEffect(() => {
@@ -35,7 +35,6 @@ const getDetails = async(url,token)=>{
     const id = localStorage.getItem("Id");
    const type = localStorage.getItem('designation')
 
-   console.log(id,'id',type,key);
     const headers = {
       Authorization: key
     };

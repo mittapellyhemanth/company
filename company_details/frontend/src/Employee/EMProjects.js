@@ -20,14 +20,14 @@ export default function EMProjects() {
     axios
       .get(`${process.env.REACT_APP_PROXY_URL}/employee/details/${id}`)
       .then((res) => {
-        console.log(res);
+       
         if (res.status === 200) {
-          console.log(res.data, "got", res);
+        
 
           setData(res.data);
         }
       })
-      .catch((err) => console.log(err));
+      // .catch((err) => console.log(err));
   }, []);
   const navigate = useNavigate();
 

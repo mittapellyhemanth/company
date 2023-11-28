@@ -73,7 +73,7 @@ export default function DesignerFilter({ searchGet, comesFrom }) {
   ];
 
   const onSubmit = async (formData) => {
-    console.log(formData, "gggggg", formData.Name);
+   
     //:Date?/:Type?/:clientName?/:ProjectTitle?/:Name?
     if (
       !formData.Date &&
