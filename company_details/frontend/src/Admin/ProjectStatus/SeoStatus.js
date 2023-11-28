@@ -58,7 +58,7 @@ export default function SeoStatus({ data,comesFrom }) {
 
                   <td className="backlink">
                     {" "}
-                    <a href={projectStatus.BackLink} target="_blank">
+                    <a href={projectStatus.BackLink} target="_blank" rel="noreferrer">
                       {projectStatus.BackLink}
                     </a>
                   </td>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 
 import ReUseForm from "../../Forms/ReUseForm";
 import "../../Styles/Login.css";
@@ -13,7 +13,7 @@ import NavbarScroll from "../Navbar/NavbarScroll";
 export default function Login() {
 
   const { personLogin ,setPersonName,setFlag } = useContext(DetailsContext);
-const[err,setError] = useState('')
+// const[err,setError] = useState('')
   const navigate = useNavigate();
 useEffect(()=>{
   setPersonName(' ');
@@ -54,7 +54,7 @@ useEffect(()=>{
       }
       if (res.status === 400) {
        
-        setError(res.message);
+        // setError(res.message);
       }
       
     } catch (error) {

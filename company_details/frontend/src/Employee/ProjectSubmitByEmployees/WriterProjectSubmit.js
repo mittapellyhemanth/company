@@ -99,7 +99,7 @@ export default function WriterProjectSubmit() {
     console.log(formData, url);
     try {
       // Send POST request to the server
-      const response = await axios.post(url, formData);
+       await axios.post(url, formData);
       setSucess("Posted Sucessfully");
       // console.log("Projects successfully added:", response.data);
     } catch (error) {

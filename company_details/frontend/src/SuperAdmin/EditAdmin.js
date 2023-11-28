@@ -7,10 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function EditAdmin() {
   // const getOneData = localStorage.getItem("empyId")
-  const { getOneData } = useContext(DetailsContext);
+ 
   const { err, setError } = useContext(DetailsContext);
   const name = localStorage.getItem("name");
-  const address = localStorage.getItem("address");
+ 
   const email = localStorage.getItem("email");
   const phoneNumber = localStorage.getItem("phoneNumber");
   const id = localStorage.getItem("empyId");

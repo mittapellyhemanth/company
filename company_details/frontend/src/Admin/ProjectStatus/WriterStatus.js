@@ -52,7 +52,7 @@ export default function WriterStatus({data,comesFrom}){
                   <td>{projectStatus.ContentTitle}</td>
                   
 
-                  <td className="backlink"> <a  href={projectStatus.ContentLink}target="_blank">{projectStatus.ContentLink}</a></td>
+                  <td className="backlink"> <a  href={projectStatus.ContentLink}target="_blank" rel="noreferrer">{projectStatus.ContentLink}</a></td>
                   
                 
                   <td className="tabel-view" onClick={()=>handleClick(projectStatus._id)}>View</td>

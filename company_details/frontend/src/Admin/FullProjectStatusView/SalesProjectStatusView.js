@@ -1,5 +1,5 @@
 import CryptoJS from "crypto-js";
-import { useNavigate } from "react-router-dom";
+
 
 export default function SalesProjectStatusView() {
   const encryptedProjectData = localStorage.getItem("SalesOneProject");
@@ -8,9 +8,7 @@ export default function SalesProjectStatusView() {
     "employeeSalesProjects"
   ).toString(CryptoJS.enc.Utf8);
   const projectStatusData = JSON.parse(decryptedProjectDatay);
-  console.log(projectStatusData);
-  const navigate = useNavigate("");
-
+ 
   const handleGoBack = () => {
     window.history.back(); // Go back to the previous page
   };

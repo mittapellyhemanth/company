@@ -4,7 +4,7 @@ import CryptoJS from "crypto-js";
 
 import DesignerStatus from "../../ProjectStatus/DesignerStatus";
 
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import axios from "axios";
 
 export default function DesignerSearchView() {

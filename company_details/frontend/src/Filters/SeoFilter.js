@@ -4,7 +4,7 @@ import FilterForm from "./FilterForm";
 export default function SeoFilter({searchGet,comesFrom}) {
   // const history = useHistory();
   console.log(comesFrom,"comesss");
-  const [searchResult, setSearchResult] = useState([]);
+  // const [searchResult, setSearchResult] = useState([]);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     Date: "",

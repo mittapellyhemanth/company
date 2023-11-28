@@ -14,10 +14,10 @@ export default function Details() {
   const [getOneData, setOneData] = useState([]);
 
 const getDetails = async(url,token)=>{
-  const key = localStorage.getItem("token");
-  const headers = {
-    Authorization: key
-  };
+  // const key = localStorage.getItem("token");
+  // const headers = {
+  //   Authorization: key
+  // };
   axios
     .get(url,token)
     .then((res) => {

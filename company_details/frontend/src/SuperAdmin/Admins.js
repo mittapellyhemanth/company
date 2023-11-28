@@ -1,10 +1,10 @@
 import axios from "axios";
-import React, { useState, useEffect, useContext } from "react";
-import Button from "react-bootstrap/Button";
+import React, { useState, useEffect } from "react";
+
 import Card from "react-bootstrap/Card";
 
 import "../Styles/EmpyCards.css";
-import AdminView from "./AdminView";
+
 import { useNavigate } from "react-router-dom";
 export default function Admins() {
   const [data, setData] = useState([]);

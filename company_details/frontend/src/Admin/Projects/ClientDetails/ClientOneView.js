@@ -1,7 +1,6 @@
 import axios from "axios";
 import CryptoJS from "crypto-js";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function ClientOneView() {
   const [data, setData] = useState([]);
@@ -12,7 +11,7 @@ export default function ClientOneView() {
   ).toString(CryptoJS.enc.Utf8);
   const clientId = JSON.parse(decryptedProjectDatay);
 
-  const navigate = useNavigate("");
+
 
   useEffect(() => {
     axios

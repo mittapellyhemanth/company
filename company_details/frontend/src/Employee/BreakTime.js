@@ -62,12 +62,12 @@ export default function BreakTime() {
     setTimerRunning(false);
 
     const URL = `${process.env.REACT_APP_PROXY_URL}/employee/breakTime/${employID}`; //post
-    function timeToSeconds(time) {
-      const [hours, minutes] = time.split(":").map(Number);
-      return hours * 3600 + minutes * 60;
-    }
-    const formatedTime = formatTime(elapsedTime);
-    const timeString = timeToSeconds(formatedTime);
+    // function timeToSeconds(time) {
+    //   const [hours, minutes] = time.split(":").map(Number);
+    //   return hours * 3600 + minutes * 60;
+    // }
+   
+    
 
     //  console.log(TotalBreakForToday,"break");
 
@@ -107,7 +107,7 @@ export default function BreakTime() {
       const totalWorkSeconds = (await logoutSeconds) + loginSeconds;
       const totalBreak = await secondsToTimeFormat(totalWorkSeconds);
 
-      console.log("Total Time Worked:", totalBreak);
+     
 
       const prevDeleteURL = `${process.env.REACT_APP_PROXY_URL}/employee/previousbreakTime/taken/${employID}/${date}`; // delete
       await axios.delete(prevDeleteURL);
@@ -115,7 +115,7 @@ export default function BreakTime() {
         Date: date,
         BreakTaken: totalBreak,
       };
-      console.log(totalBreak, "break");
+     
       await axios.post(URL, data).then((res) => {
         // console.log(res.data);
         localStorage.setItem("breakTaken", res.data.BreakTaken);

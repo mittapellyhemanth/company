@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 
 import "../Styles/SuperHome.css";
@@ -8,29 +8,28 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import UserName from "../Functions/UserName";
 
 
-import axios from 'axios'
 
 export default function SuperAdminHome() {
-  const { data, setData } = useState([])
- console.log('super');
+  // const { data, setData } = useState([])
+
   UserName()
 
 const sidebarData = [
   {label:'Admins', to:'admins'},
   {label:'Add Admin', to:'addAdmin'}
 ];
-useEffect(() => {
-  axios
-    .get()
-    .then((res) => {
-      // console.log(res)
-      if (res.status === 200) {
-        console.log(res.data.data, "got");
-         setData(res.data.data);
-      }
-    })
-    .catch((err) => console.log(err));
-}, []);
+// useEffect(() => {
+//   axios
+//     .get()
+//     .then((res) => {
+//       // console.log(res)
+//       if (res.status === 200) {
+      
+//          setData(res.data.data);
+//       }
+//     })
+//     .catch((err) => console.log(err));
+// }, []);
   return (
     <>
       <div className="grid-container">

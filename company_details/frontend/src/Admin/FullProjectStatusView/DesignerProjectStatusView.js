@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 
 
-import { useNavigate } from "react-router-dom";
+
 
 export default function DesignerProjectStatusView() {
   const encryptedProjectData = localStorage.getItem("designerOneProject");

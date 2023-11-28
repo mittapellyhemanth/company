@@ -13,7 +13,7 @@ export default function SalesProjectStatus() {
   setProjectStatusData("");
 
   const projectEmplyId = localStorage.getItem("projEmId");
-  const ProjectName = localStorage.getItem("ProjectName");
+  
 
   useEffect(() => {
     fetchData(projectEmplyId);

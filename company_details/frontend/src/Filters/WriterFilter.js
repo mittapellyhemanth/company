@@ -4,7 +4,7 @@ import FilterForm from "./FilterForm";
 
 export default function WriterFilter({searchGet,comesFrom}) {
   // const history = useHistory();
-  const [searchResult, setSearchResult] = useState([]);
+  // const [searchResult, setSearchResult] = useState([]);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     Date: "",

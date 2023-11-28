@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import DetailsContext from "../../../Context/CreateContext";
+import React, { useEffect, useState } from "react";
+
 import axios from "axios";
 import "../../../Styles/ProjectStatus.css";
 import DesignerStatus from "../../ProjectStatus/DesignerStatus";
