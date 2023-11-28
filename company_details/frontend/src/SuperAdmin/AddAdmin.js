@@ -3,7 +3,7 @@ import ReUseForm from "../Forms/ReUseForm";
 import axios from "axios";
 
 import "../Styles/SuperHome.css";
-import { useNavigate } from "react-router-dom";
+
 
 export default function AddAdmin() {
   const [err, setError] = useState("");
