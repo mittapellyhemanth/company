@@ -123,8 +123,8 @@ let LoginTime = hours + ":" + minutes + ":" + seconds + " " + ampm
     </div>
     <div className="Login-container">
       <div className="login-text">
-        <p>Enter your credentials</p>
       <div className="error">{err}</div>
+        <p>Enter your credentials</p>
       </div>
       <div className="Login">
         <ReUseForm Method='POST' inputs={input} onSubmit={submitLogin} btnText='Sign In' />

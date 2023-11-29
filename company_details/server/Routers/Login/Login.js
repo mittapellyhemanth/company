@@ -34,7 +34,7 @@ const LoginDetails = async function(req,res,user){
         })
     } else {
         res.status(401).json({
-            message: "Email is not registered with us.."
+            message: "User does not exist"
         })
     }
 }
