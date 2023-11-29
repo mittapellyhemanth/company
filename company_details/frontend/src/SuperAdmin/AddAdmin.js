@@ -93,12 +93,16 @@ export default function AddAdmin() {
       // console.log(error,'error');
     }
   };
+  const remove = ()=>{
+    setError('')
+  }
 
   return (
     <>
       <div className="form-addpro">
-        {sucess && <div className="sucess-admin">{sucess}</div>}
-        {err && <div className="error">{err}</div>}
+        
+        {sucess && <div className="sucess-admin slide-in sucess-admin">{sucess}</div>}
+        {err && <div className="sucess-admin slide-in error">{err}<span onClick={remove} className="remove">X</span></div>}
         {sucess ? (
           <>
             {" "}

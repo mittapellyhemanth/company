@@ -43,11 +43,14 @@ export default function ReUseForm({ Method, inputs, onSubmit, btnText, urlData }
       setDateError('');
     }
   };
-
+  
+const remove = ()=>{
+  setDateError('')
+}
 
   return (
     <>
-      {dateError && <p className="error">{dateError}</p>}
+      {dateError &&<p className="sucess-admin slide-in error">{dateError}<span onClick={remove} className="remove">X</span></p> }
       <Form method={Method} onSubmit={handleSubmit} encType="multipart/form-data">
         {inputs.map((input) => (
           <div key={input.name} className={input.clasename}>

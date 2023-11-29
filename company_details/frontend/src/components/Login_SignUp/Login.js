@@ -122,8 +122,9 @@ let LoginTime = hours + ":" + minutes + ":" + seconds + " " + ampm
       <h1>{personLogin}</h1>
     </div>
     <div className="Login-container">
+        {err && <h2 className="err">{err}</h2>}
       <div className="login-text">
-      <div className="error">{err}</div>
+      
         <p>Enter your credentials</p>
       </div>
       <div className="Login">
